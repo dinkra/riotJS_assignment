@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Riot todo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="todo.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>html5.addElements('todo')</script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <todo>
+    </todo>
+
+    <script src="//cdn.jsdelivr.net/g/riot@2.0.14(riot.min.js+compiler.min.js)"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="todo.js"></script>
+
+    <script type="riot/tag">
+      <todo>
+        <h3>{ opts.title }</h3>
+        <add_task/>
+        <tasks items={ opts.items }/>
+      </todo>
+
+      <tasks>
+        <ul>
+          <task each={ item, i in opts.items }/>
+        </ul>
+      </tasks>
+
+      <task>
+            <li class={ completed: item.done }>
+              <label class={ completed: item.done }>
+                { item.title }
+              </label> 
+              <a class="delete_task" data-task-id="{ i }">del</a>
+              <a class="done_task" data-task-id="{ i }">done</a>
+              <a class="edit_task" data-task-id="{ i }">edit</a>
+            </li>
+      </task>
+
+      
+
+      <add_task>
+        <form onsubmit="return addTask()">
+            <input name="input" id="newTask">
+            <button type="submit">Add</button>
+        </form>
+      </add_task>
+
+
+    </script>
+
+    <script>
+    var tags = riot.mount('todo', tasks);
+    todoTag = tags[0];
+    </script>
+
+
+  </body>
+
+</html>

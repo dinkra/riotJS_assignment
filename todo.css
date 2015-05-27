@@ -1,0 +1,92 @@
+body {
+  width: 600px;
+  margin: 0 auto; 
+  font-family: 'myriad pro', sans-serif;
+  font-size: 20px;
+  border: 0;
+}
+
+form input {
+  font-size: 100%;
+  padding: .6em;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #2098D1;
+  border: 1px solid rgba(0,0,0,.2);
+  font-size: 100%;
+  color: #fff;
+  padding: .6em 1.2em;
+  cursor: pointer;
+  margin: 0 .3em;
+  outline: none;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0px;
+}
+
+
+li {
+	background-color: #e1e1e1;
+	margin-bottom: 5px;
+	padding: 20px;
+	xborder: 1px solid #ccc;
+	xheight: 45px;
+	xtext-align: center;
+}
+
+a {
+	float: right;
+	margin-right: 10px;
+	xpadding: 15px;
+	xtext-align: center;
+	xheight: 45px;
+}
+
+.delete_task {
+	background-color: #e1e1e1;
+}
+
+.done_task {
+	background-color: #e1e1e1;
+}
+
+.edit_task {
+	background-color: #e1e1e1;
+}
+
+.delete_task:hover {
+	background-color: red;
+}
+
+.done_task:hover {
+	background-color: green;
+}
+
+.edit_task:hover {
+	background-color: #F9ED41;
+}
+
+.completed {
+	opacity: 0.4;
+}
+
+
+
+
+
+
+
+background: rgba(183,222,237,1);
+background: -moz-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 50%, rgba(33,180,226,1) 51%, rgba(183,222,237,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(183,222,237,1)), color-stop(50%, rgba(113,206,239,1)), color-stop(51%, rgba(33,180,226,1)), color-stop(100%, rgba(183,222,237,1)));
+background: -webkit-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 50%, rgba(33,180,226,1) 51%, rgba(183,222,237,1) 100%);
+background: -o-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 50%, rgba(33,180,226,1) 51%, rgba(183,222,237,1) 100%);
+background: -ms-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 50%, rgba(33,180,226,1) 51%, rgba(183,222,237,1) 100%);
+background: linear-gradient(to right, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 50%, rgba(33,180,226,1) 51%, rgba(183,222,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#b7deed', GradientType=1 );
+
+
