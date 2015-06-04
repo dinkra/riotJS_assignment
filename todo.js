@@ -6,8 +6,6 @@ var tasks = {
 	]
 };
 
-var todoTag;
-
 
 //set array of tasks to LocalStorage
 function updateLocalStorage() {
@@ -20,7 +18,7 @@ function updateTasks() {
 	if (localStorage.length) {
 		tasks.items = JSON.parse(localStorage.getItem('tasksArray'));
 	}
-	todoTag.update();
+	riot.update();
 }
 
 // add new task
@@ -30,7 +28,7 @@ function addTask() {
 		$("#newTask").val('');
 		tasks.items.push({ title: val, done: false });
 	};
-	todoTag.update();
+	riot.update();
 	updateLocalStorage();
 	return false;
 }
@@ -38,7 +36,7 @@ function addTask() {
 //delete task
 function deleteTask(i) {
 	tasks.items.splice(i, 1);
-	todoTag.update();
+	riot.update();
 	updateLocalStorage();
 
 }
@@ -49,19 +47,44 @@ function doneTask(i) {
 		tasks.items[i].done = false
 	} else {
 		tasks.items[i].done = true
-	}todoTag.update();
+	}
+	riot.update();
 	updateLocalStorage();
 }
 
 //popup where is possible to change item
+// function editTask(i) {
+// 	var x = window.prompt('Edit your task', tasks.items[i].title);
+// 	if (x) { 
+// 		tasks.items[i].title = x;
+// 	}
+// 	riot.update();
+// 	updateLocalStorage();
+
+// }
+
 function editTask(i) {
-	var x = window.prompt('Edit your task', tasks.items[i].title);
-	if (x) { 
-		tasks.items[i].title = x;
-	}
-	todoTag.update();
+	$('.title_task' + i).hide();
+	$('.edit_input' + i).show();
+	$('.edit_button' + i).show();
+
+	$('ul').on('click', '.edit_button', function() {
+        saveTitle(i);
+    });
+
+}
+
+function saveTitle(i) {
+	var val = $('.edit_input' + i).val();
+	if (val) {
+		tasks.items[i].title = val;
+	};
+	riot.update();
 	updateLocalStorage();
 
+	$('.title_task' + i).show();
+	$('.edit_input' + i).hide();
+	$('.edit_button' + i).hide();
 }
 
 

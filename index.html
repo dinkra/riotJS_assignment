@@ -38,12 +38,14 @@
 
       <task>
             <li class={ completed: item.done }>
-              <label class={ completed: item.done }>
-                { item.title }
-              </label> 
-              <a class="delete_task" data-task-id="{ i }">del</a>
-              <a class="done_task" data-task-id="{ i }">done</a>
-              <a class="edit_task" data-task-id="{ i }">edit</a>
+              <p class="{ completed: item.done } title">
+                <span class="title_task{ i }">{ item.title }</span>
+                <input name="input" value={ item.title } class="edit_input edit_input{ i }">
+                <button type="submit" class="edit_input edit_button edit_button{ i }">save</button>
+                <a class="delete_task" data-task-id="{ i }">del</a>
+                <a class="done_task" data-task-id="{ i }">done</a>
+                <a class="edit_task" data-task-id="{ i }">edit</a>
+              </p> 
             </li>
       </task>
 
@@ -56,8 +58,7 @@
     </script>
 
     <script>
-    var tags = riot.mount('todo', tasks);
-    todoTag = tags[0];
+    riot.mount('todo', tasks);
     </script>
 
 
